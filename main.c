@@ -3,12 +3,9 @@
 
 void main(void)
 {
-  char src[] = "The worst things to eat before you sleep";//[]: 글자의 갯수에 맞게 문자열 크기 자동 지정 
-  char dst[100];
+  char str[30] = "happy C programming";
   
-  strcpy(dst, src);
-
-  printf("copied string : %s\n", dst);
+  printf("문자열\"%s\"의 길이: %i\n", str, strlen(str));
 
   system("PAUSE");	
   return 0;
