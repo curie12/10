@@ -4,23 +4,20 @@
 void main(void)
 {
   FILE* fp;
-  char str[100];
-  int i;
+  char c;
   
-  //1. OPEN FILE
-  fp = fopen("sample.txt","w");//두가지 입력 (파일명,모드) 
-  
-  //2. WRITE FILE
-  for(i=0;i<3;i++)
+  fp = fopen("sample.txt","r");//두가지 입력 (파일명,모드)
+  if (fp == NULL)//sample.txt가 존재하지 않을 때 
   {
-      //2-1. PRINT "input a word"]
-      printf("input a word: ");
-      //2-2. SCANF A STRING
-      scanf("%s", str);
-      //2-3. fprintf()
-      fprintf(fp, "%s\n", str);
+         printf("failed to open\n");
+         return 0;
   }
-  //3. CLOSE FILE
+  
+  while((c=fgetc(fp))!= EOF)//한 글자 읽은게 마지막이 아니면
+  { 
+       putchar(c);//한글자 출력  
+  }
+  
   fclose(fp); 
   
   system("PAUSE");	
