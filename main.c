@@ -1,22 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char *argv[])
+void main(void)
 {
-  int i = 0;
-  char str[4];
-  str[0] = 'a';
-  str[1] = 'b';
-  str[2] = 'c';
-  str[3] = '\0';
+  char src[] = "The worst things to eat before you sleep";//[]: 글자의 갯수에 맞게 문자열 크기 자동 지정 
+  char dst[100];
   
-  printf("%s\n", str);
-  
-  while(str[i] != '\0'){
-         printf("%c", str[i]);
-         i++;
-  }
-  
+  strcpy(dst, src);
+
+  printf("copied string : %s\n", dst);
+
   system("PAUSE");	
   return 0;
 }
